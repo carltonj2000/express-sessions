@@ -1,0 +1,17 @@
+{
+  "localhost": {
+    "/": {
+      "server-session-cookie-id": {
+        "key": "server-session-cookie-id",
+        "value":
+          "s%3Ar-TIBw_-Q8CVxOgLpZfq1SGK7p5U0LXL.ykIavP7WSI5N7RMIsggYWWE7YCJnpkHWLET%2BcacGuUg",
+        "domain": "localhost",
+        "path": "/",
+        "httpOnly": true,
+        "hostOnly": true,
+        "creation": "2018-02-14T00:47:45.331Z",
+        "lastAccessed": "2018-02-14T00:47:45.331Z"
+      }
+    }
+  }
+}
