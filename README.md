@@ -4,6 +4,9 @@ The code in this repository is based on the
 [Express sessions](https://glebbahmutov.com/blog/express-sessions/)
 article.
 
+The original repository, noted in the article, has tags for each step of the
+tutorial and this repository does not.
+
 See header by using the following curl command for server access:
 
 ```
