@@ -35,10 +35,12 @@ app.get("/", function incrementViewsCount(req, res, next) {
 });
 app.use(function printSession(req, res, next) {
   console.log("req.session", req.session);
+  console.log("req header referer", req.header("referer"));
   return next();
 });
 app.get("/", function sendPageWithCounter(req, res) {
   res.setHeader("Content-Type", "text/html");
+  res.setHeader("referer", "server referer");
   res.write("<p>views: " + req.session.views + "</p>\n");
   res.end();
 });

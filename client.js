@@ -7,12 +7,23 @@ const rp = requestPromise.defaults({
   rejectUnauthorized: false
 });
 
-const requestPage = () => rp("https://localhost:3000/");
+const requestPage = previousResponse => {
+  const referer = previousResponse ? previousResponse.headers.referer : null;
+  if (referer) console.log('previous response referer "%s"', referer);
+  return rp({
+    url: "https://localhost:3000/",
+    resolveWithFullResponse: true,
+    headers: { referer: referer }
+  });
+};
 
 requestPage()
-  .then(console.dir)
-  .then(requestPage)
-  .then(console.dir)
-  .then(requestPage)
-  .then(console.dir)
+  .then(response => {
+    console.log(response.body);
+    return requestPage(response);
+  })
+  .then(response => {
+    console.log(response.body);
+    return requestPage(response);
+  })
   .catch(console.error);
